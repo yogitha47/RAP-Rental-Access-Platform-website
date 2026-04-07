@@ -22,9 +22,7 @@ This project was developed to demonstrate frontend development skills including 
 
 
 ## 🌐 Live Demo
-
-(Add your GitHub Pages link here after hosting)
-
+https://yogitha47.github.io/RAP-Rental-Access-Platform-website/
 
 ## 🔮 Future Improvements
 

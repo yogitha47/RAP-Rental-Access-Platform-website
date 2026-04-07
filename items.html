@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse Items — RAP</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%236a5af9'/><text x='16' y='23' font-size='19' font-family='sans-serif' font-weight='bold' text-anchor='middle' fill='white'>R</text></svg>" />
+</head>
+<body>
+
+<header id="site-header">
+  <a class="logo" href="index.html">
+    <canvas id="logo-canvas" width="34" height="34"></canvas>
+    <span>RAP<br><span class="logo-sub">Rental Access Platform</span></span>
+  </a>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="items.html" class="active">Browse Items</a></li>
+	  <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="booking.html">Book Now</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="nav-right">
+    <a href="https://www.youtube.com" target="_blank" rel="noopener" class="btn btn-glass btn-sm">▶ Demo</a>
+    <a href="booking.html" class="btn btn-primary btn-sm">Rent an Item</a>
+  </div>
+</header>
+
+<div class="page-layout">
+
+  <aside id="sidebar">
+    
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Filters</div>
+
+      <div class="filter-group">
+        <label>Category</label>
+        <select id="f-cat">
+          <option value="">All Categories</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Computers">Computers</option>
+          <option value="Vehicles">Vehicles</option>
+          <option value="Photography">Photography</option>
+          <option value="Books">Books</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Max Price/Day: <span class="range-val" id="f-price-val">₹1500</span></label>
+        <input type="range" id="f-price" min="30" max="1500" value="1500" step="50" />
+      </div>
+
+      <div class="filter-group">
+        <label>Availability</label>
+        <select id="f-avail">
+          <option value="">All</option>
+          <option value="yes">Available Now</option>
+          <option value="no">Currently Rented</option>
+        </select>
+      </div>
+
+      <button class="btn btn-glass btn-sm" style="width:100%;margin-top:0.25rem;"
+        onclick="document.getElementById('f-cat').value='';document.getElementById('f-price').value=1500;document.getElementById('f-price-val').textContent='₹1500';document.getElementById('f-avail').value='';document.querySelectorAll('.item-card').forEach(c=>c.style.display='');">
+        Reset Filters
+      </button>
+    </div>
+
+    <!-- Popular Items -->
+    <div class="sidebar-section">
+      <div class="sidebar-label">Popular Items</div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="#" onclick="return false;"><span class="s-icon">📷</span>Sony A7 III</a></li>
+          <li><a href="#" onclick="return false;"><span class="s-icon">🚵</span>Trek Bike</a></li>
+          <li><a href="#" onclick="return false;"><span class="s-icon">🚁</span>DJI Mavic 3</a></li>
+          <li><a href="#" onclick="return false;"><span class="s-icon">📽️</span>4K Projector</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+
+  <main class="page-main">
+    <section>
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Browse <em>Rental Items</em></h2>
+          <p style="font-size:0.88rem;color:var(--text-light);margin-top:0.2rem;">Filter, search and instantly book cameras, bikes, laptops & more.</p>
+        </div>
+        <input type="search" id="item-search" placeholder="🔍 Search items…"
+          style="background:rgba(255,255,255,0.5);border:1.5px solid rgba(255,255,255,0.7);color:var(--text-dark);padding:0.55rem 1rem;border-radius:50px;font-family:var(--font-body);font-size:0.9rem;width:220px;outline:none;" />
+      </div>
+
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.75rem;">
+        <button class="btn btn-glass btn-sm"
+onclick="document.getElementById('f-cat').value='';document.getElementById('f-cat').dispatchEvent(new Event('change'));">
+All
+</button>
+        <button class="btn btn-glass btn-sm" onclick="document.getElementById('f-cat').value='Electronics';document.getElementById('f-cat').dispatchEvent(new Event('change'));">⚡ Electronics</button>
+        <button class="btn btn-glass btn-sm" onclick="document.getElementById('f-cat').value='Computers';document.getElementById('f-cat').dispatchEvent(new Event('change'));">💻 Computers</button>
+        <button class="btn btn-glass btn-sm" onclick="document.getElementById('f-cat').value='Vehicles';document.getElementById('f-cat').dispatchEvent(new Event('change'));">🚗 Vehicles</button>
+        <button class="btn btn-glass btn-sm" onclick="document.getElementById('f-cat').value='Photography';document.getElementById('f-cat').dispatchEvent(new Event('change'));">📷 Photography</button>
+        <button class="btn btn-glass btn-sm" onclick="document.getElementById('f-cat').value='Books';document.getElementById('f-cat').dispatchEvent(new Event('change'));">📚 Books</button>
+      </div>
+
+      <div id="items-box" class="items-grid"></div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Items Table / Directory -->
+    <section>
+      <div class="section-header">
+        <h2 class="section-title">Item <em>Directory</em></h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th><th>Item</th><th>Category</th><th>Price/Day</th><th>Status</th><th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="dir-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer id="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo" style="margin-bottom:0.75rem;">
+        <canvas id="logo-canvas-f" width="30" height="30"></canvas>
+        <span>RAP<br><span class="logo-sub">Rental Access Platform</span></span>
+      </a>
+      <p>Rent cameras, bikes, laptops & more. Item rental only — not real estate.</p>
+      <a href="mailto:hello@raprentals.in" class="btn btn-glass btn-sm" style="margin-top:1rem;">✉ hello@raprentals.in</a>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul><li><a href="index.html">Home</a></li><li><a href="booking.html">Book Now</a></li><li><a href="about.html">About</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul><li><a href="#">Electronics</a></li><li><a href="#">Computers</a></li><li><a href="#">Vehicles</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Help</h4>
+      <ul><li><a href="contact.html">Contact Us</a></li><li><a href="https://www.youtube.com" target="_blank">▶ YouTube</a></li></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 RAP – Rental Access Platform.</span>
+    <span>📦 Physical item rental only</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tb = document.getElementById('dir-tbody');
+    if (tb) {
+      for (let i = 0; i < ITEMS.length; i++) {
+        const it = ITEMS[i];
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${it.id}</td>
+          <td><strong>${it.emoji} ${it.name}</strong></td>
+          <td><span class="tag">${it.cat}</span></td>
+          <td><strong style="color:#6a5af9">₹${it.price}</strong></td>
+          <td><span class="${it.avail?'avail':'unavail'}">${it.avail?'Available':'Rented'}</span></td>
+          <td><button class="btn btn-primary btn-sm" onclick="window.location='booking.html?item=${it.name}'"
+            ${it.avail?'':'disabled style="opacity:0.4;cursor:not-allowed"'}>
+            ${it.avail?'Rent Now':'Unavailable'}
+          </button></td>`;
+        tb.appendChild(tr);
+      }
+    }
+  });
+</script>
+</body>
+</html>

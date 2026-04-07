@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — RAP</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%236a5af9'/><text x='16' y='23' font-size='19' font-family='sans-serif' font-weight='bold' text-anchor='middle' fill='white'>R</text></svg>" />
+</head>
+<body>
+
+<header id="site-header">
+  <a class="logo" href="index.html">
+    <canvas id="logo-canvas" width="34" height="34"></canvas>
+    <span>RAP<br><span class="logo-sub">Rental Access Platform</span></span>
+  </a>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="items.html">Browse Items</a></li>
+	  <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="booking.html">Book Now</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="nav-right">
+    <a href="https://www.youtube.com" target="_blank" rel="noopener" class="btn btn-glass btn-sm">▶ Demo</a>
+    <a href="booking.html" class="btn btn-primary btn-sm">Rent an Item</a>
+  </div>
+</header>
+
+<div class="page-layout">
+
+  <aside id="sidebar">
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">On This Page</div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="#mission"><span class="s-icon">🎯</span>Mission</a></li>
+          <li><a href="#values"><span class="s-icon">💎</span>Our Values</a></li>
+          <li><a href="#how"><span class="s-icon">⚙️</span>How It Works</a></li>
+          <li><a href="#stats"><span class="s-icon">📊</span>Platform Stats</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">What We Rent</div>
+      <div style="padding:0 0.4rem;">
+        <div style="background:rgba(255,255,255,0.35);border:1px solid rgba(255,255,255,0.6);border-radius:12px;padding:0.85rem;font-size:0.82rem;color:var(--text-mid);line-height:2;">
+          📷 Cameras &amp; Lenses<br>
+          🚵 Bikes &amp; Scooters<br>
+          💻 Laptops &amp; Tablets<br>
+          📽️ Projectors<br>
+          📚 Books &amp; Equipment<br>
+          🎧 Audio Gear
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="page-main">
+    <section id="mission">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:2.5rem;">
+        <div>
+          <div class="hero-pill" style="margin-bottom:1rem;">About RAP</div>
+          <h1 style="font-family:var(--font-head);font-size:2.2rem;margin-bottom:1rem;line-height:1.15;">
+            We're <em style="font-style:italic;background:var(--primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Redefining</em><br>How India Rents Items
+          </h1>
+          <p style="color:var(--text-mid);line-height:1.8;margin-bottom:1.5rem;"><p>
+RAP (Rental Access Platform) is designed to make high-value physical items accessible without the need for ownership. 
+Instead of spending thousands on products used only occasionally, users can rent them for short durations at affordable prices. 
+
+The platform works by connecting people who need items with those who own them, creating a simple peer-to-peer rental ecosystem. 
+With real-time availability, transparent pricing (Price/Day × Days), and quick booking, RAP removes the complexity of traditional renting and makes the process fast, reliable, and cost-efficient.
+</p><br>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+            <a href="items.html" class="btn btn-primary">Browse Items</a>
+            <a href="contact.html" class="btn btn-glass">Get in Touch</a>
+          </div>
+        </div>
+        <div style="position:relative;height:280px;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,0.6);box-shadow:0 12px 40px rgba(100,80,200,0.18);">
+          <canvas id="about-canvas" style="width:100%;height:100%;"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="values">
+      <div class="section-header">
+        <h2 class="section-title">Our <em>Values</em></h2>
+      </div>
+      <div class="value-cards">
+        <article class="v-card">
+          <div class="v-icon">🌱</div>
+          <h4>Sustainability</h4>
+          <p>Sharing economy = less waste. One rented camera replaces ten bought-and-abandoned ones.</p>
+        </article>
+        <article class="v-card">
+          <div class="v-icon">🤝</div>
+          <h4>Trust & Safety</h4>
+          <p>Verified renters & lenders. Every item inspected. Insurance available for peace of mind.</p>
+        </article>
+        <article class="v-card">
+          <div class="v-icon">💡</div>
+          <h4>Accessibility</h4>
+          <p>Premium gear shouldn't be a privilege. We make professional tools affordable for everyone.</p>
+        </article>
+        <article class="v-card">
+          <div class="v-icon">⚡</div>
+          <h4>Simplicity</h4>
+          <p>Book in under 2 minutes. No paperwork, no long contracts, no hidden fees.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="how">
+      <div class="section-header">
+        <h2 class="section-title">How <em>It Works</em></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;">
+        <article class="glass" style="padding:1.5rem;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:-8px;right:-8px;font-size:4rem;opacity:0.06;">🔍</div>
+          <div style="background:var(--primary);color:#fff;font-weight:800;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:0.9rem;">1</div>
+          <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:0.4rem;">Search & Discover</h3>
+          <p style="font-size:0.82rem;color:var(--text-light);line-height:1.6;">Browse 1200+ items across Electronics, Vehicles, Books, Photography & more.</p>
+        </article>
+        <article class="glass" style="padding:1.5rem;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:-8px;right:-8px;font-size:4rem;opacity:0.06;">📅</div>
+          <div style="background:var(--primary);color:#fff;font-weight:800;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:0.9rem;">2</div>
+          <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:0.4rem;">Book Online</h3>
+          <p style="font-size:0.82rem;color:var(--text-light);line-height:1.6;">Select dates. Price calculated: Price/Day × Days. No surprises.</p>
+        </article>
+        <article class="glass" style="padding:1.5rem;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:-8px;right:-8px;font-size:4rem;opacity:0.06;">🚚</div>
+          <div style="background:var(--primary);color:#fff;font-weight:800;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:0.9rem;">3</div>
+          <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:0.4rem;">Receive & Use</h3>
+          <p style="font-size:0.82rem;color:var(--text-light);line-height:1.6;">Doorstep delivery or pickup. Full support during rental.</p>
+        </article>
+        <article class="glass" style="padding:1.5rem;position:relative;overflow:hidden;">
+          <div style="position:absolute;top:-8px;right:-8px;font-size:4rem;opacity:0.06;">🔄</div>
+          <div style="background:var(--primary);color:#fff;font-weight:800;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:0.9rem;">4</div>
+          <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:0.4rem;">Return & Review</h3>
+          <p style="font-size:0.82rem;color:var(--text-light);line-height:1.6;">Drop off when done. Leave a review. Transparent from start to finish.</p>
+        </article>
+      </div>
+    </section>
+	<br>
+	<div class="divider"></div>
+	<section>
+  <div class="section-header">
+    <h2 class="section-title">Why <em>RAP Works</em></h2>
+  </div>
+
+  <div class="glass" style="padding:1.5rem;">
+    <p style="color:var(--text-light);line-height:1.8;">
+      RAP works because it solves a real problem — underutilized assets. 
+      Most people own items that are rarely used, while others need them temporarily. 
+      By enabling sharing, RAP reduces cost for renters and creates earning opportunities for owners. 
+      The platform combines simplicity, transparency, and trust to make renting as easy as online shopping.
+    </p>
+  </div>
+</section>
+
+    <div class="divider"></div>
+
+    <section style="margin-top:2.5rem;">
+      <div class="section-header">
+        <h2 class="section-title">What You Can <em>Rent</em></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;">
+        <div class="glass" style="padding:1.25rem;">
+          <h4 style="color:var(--primary-solid);margin-bottom:0.75rem;font-size:0.95rem;">⚡ Electronics</h4>
+          <ul style="list-style:disc;padding-left:1.2rem;color:var(--text-light);font-size:0.85rem;line-height:2.1;">
+            <li>Cameras &amp; Camcorders</li>
+            <li>Drones &amp; Gimbals</li>
+            <li>Projectors &amp; Screens</li>
+            <li>Portable Speakers</li>
+            <li>Action Cameras</li>
+          </ul>
+        </div>
+        <div class="glass" style="padding:1.25rem;">
+          <h4 style="color:var(--primary-solid);margin-bottom:0.75rem;font-size:0.95rem;">💻 Computers</h4>
+          <ul style="list-style:disc;padding-left:1.2rem;color:var(--text-light);font-size:0.85rem;line-height:2.1;">
+            <li>MacBook Pro / Air</li>
+            <li>Windows Laptops</li>
+            <li>iPads &amp; Tablets</li>
+            <li>Gaming PCs</li>
+            <li>External Storage</li>
+          </ul>
+        </div>
+        <div class="glass" style="padding:1.25rem;">
+          <h4 style="color:var(--primary-solid);margin-bottom:0.75rem;font-size:0.95rem;">🚗 Vehicles</h4>
+          <ul style="list-style:disc;padding-left:1.2rem;color:var(--text-light);font-size:0.85rem;line-height:2.1;">
+            <li>Mountain Bikes</li>
+            <li>Road Bicycles</li>
+            <li>Electric Scooters</li>
+            <li>Skateboards</li>
+            <li>Roller Skates</li>
+          </ul>
+        </div>
+        <div class="glass" style="padding:1.25rem;">
+          <h4 style="color:var(--primary-solid);margin-bottom:0.75rem;font-size:0.95rem;">📚 Books</h4>
+          <ul style="list-style:disc;padding-left:1.2rem;color:var(--text-light);font-size:0.85rem;line-height:2.1;">
+            <li>Programming Books</li>
+            <li>Design &amp; UX</li>
+            <li>Academic Textbooks</li>
+            <li>Business &amp; Finance</li>
+            <li>Science &amp; Tech</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer id="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo" style="margin-bottom:0.75rem;">
+        <canvas id="logo-canvas-f" width="30" height="30"></canvas>
+        <span>RAP<br><span class="logo-sub">Rental Access Platform</span></span>
+      </a>
+      <p>India's premier platform for renting physical items — cameras, bikes, laptops & more.</p>
+      <a href="mailto:hello@raprentals.in" class="btn btn-glass btn-sm" style="margin-top:1rem;">✉ hello@raprentals.in</a>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul><li><a href="items.html">Browse Items</a></li><li><a href="booking.html">Book Now</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul><li><a href="about.html">About RAP</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Links</h4>
+      <ul>
+        <li><a href="https://www.youtube.com" target="_blank">▶ YouTube</a></li>
+        <li><a href="mailto:hello@raprentals.in">📧 Email Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 RAP – Rental Access Platform. All rights reserved.</span>
+    <span>📦 Physical items only — not real estate</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
